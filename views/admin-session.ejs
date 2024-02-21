@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #007BFF;
+            padding: 10px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .right-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .right-links a:hover {
+            text-decoration: underline;
+        }
+
+        .tournament-session-form {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .session-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-heading">Sports Scheduler - Admin Dashboard</div>
+        <div class="right-links">
+            <a href="admin-dashboard.ejs">Home</a>
+            <a href="admin-session.ejs">Sessions</a>
+            <a href="admin-signin.ejs">Logout</a>
+        </div>
+    </div>
+
+    <div class="tournament-session-form">
+        <h2>Create Tournament Session</h2>
+        <!-- Form to create a tournament session -->
+        <form id="sessionForm">
+            <label for="sportName">Sport Name:</label>
+            <input type="text" id="sportName" required><br>
+
+            <label for="availablePlayers">Available Players:</label>
+            <input type="number" id="availablePlayers" required><br>
+
+            <label for="startTime">Start Time:</label>
+            <input type="datetime-local" id="startTime" required><br>
+
+            <label for="endTime">End Time:</label>
+            <input type="datetime-local" id="endTime" required><br>
+
+            <label for="stadiumName">Stadium Name:</label>
+            <input type="text" id="stadiumName" required><br>
+
+            <button type="button" onclick="createSession()">Save</button>
+        </form>
+    </div>
+
+    <div class="session-list">
+        <h2>Created Tournament Sessions</h2>
+        <ul id="sessionList">
+            <!-- Display the list of created sessions here -->
+        </ul>
+    </div>
+
+    <script>
+        // Function to create a tournament session
+        function createSession() {
+            const sportName = document.getElementById('sportName').value;
+            const availablePlayers = document.getElementById('availablePlayers').value;
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+            const stadiumName = document.getElementById('stadiumName').value;
+
+            // For demonstration, add the session details to the list
+            const sessionList = document.getElementById('sessionList');
+            const sessionItem = document.createElement('li');
+            sessionItem.textContent = `Sport: ${sportName}, Players: ${availablePlayers}, Start: ${startTime}, End: ${endTime}, Stadium: ${stadiumName}`;
+            sessionList.appendChild(sessionItem);
+
+            // Additional logic to save the session details to the database or storage
+            // You may use AJAX, fetch API, or other methods to send data to the server
+        }
+    </script>
+</body>
+</html>

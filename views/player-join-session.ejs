@@ -1,0 +1,154 @@
+<!-- player-join-session.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Session</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #007BFF;
+            padding: 10px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .right-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .right-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+
+        .session-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: auto;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .session-name {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .credentials {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .credentials label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .join-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-heading">Sports Scheduler</div>
+        <div class="right-links">
+            <a href="player-dashboard.ejs">Home</a>
+            <a href="events.ejs">Events</a>
+            <a href="player-signin.ejs">Logout</a>
+        </div>
+    </div>
+    <h1>Join Session</h1>
+
+    <div class="session-details">
+        <h2 class="session-name">Kabaddi Session</h2>
+        <div class="credentials">
+            <label for="playerName">Your Name:</label>
+            <input type="text" id="playerName" class="input-field" placeholder="Enter your name">
+
+            <label for="teamName">Team Name:</label>
+            <input type="text" id="teamName" class="input-field" placeholder="Enter your team name">
+
+            <label for="teamSize">Team Size:</label>
+            <input type="number" id="teamSize" class="input-field" placeholder="Enter team size">
+
+            <label for="sessionDate">Date:</label>
+            <input type="date" id="sessionDate" class="input-field">
+
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" class="input-field">
+
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" class="input-field">
+            
+        </div>
+
+        <button class="join-button" onclick="joinSession()">Join Session</button>
+    </div>
+    <div class="footer">
+        @Designed by Oliva Penumatsa
+    </div>
+
+    <script>
+        function joinSession() {
+            // Implement the logic to join the session
+            var playerName = document.getElementById('playerName').value;
+            var teamName = document.getElementById('teamName').value;
+            var teamSize = document.getElementById('teamSize').value;
+            var sessionDate = document.getElementById('sessionDate').value;
+            var startTime = document.getElementById('startTime').value;
+            var endTime = document.getElementById('endTime').value;
+
+            // Perform any necessary validation or processing with the obtained values
+
+            alert("You are successfully joined this session "  + playerName);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!-- event.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #007BFF;
+            padding: 10px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .right-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .right-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .sport-card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+        }
+
+        .sport-name {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .join-session-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-heading">Sports Scheduler</div>
+        <div class="right-links">
+            <a href="player-dashboard.ejs">Home</a>
+            <a href="events.ejs">Events</a>
+            <a href="player-signin.ejs">Logout</a>
+        </div>
+    </div>
+    <h1>List of Sports Events</h1>
+
+    <div class="card-container">
+        <div class="sport-card">
+            <h3 class="sport-name">Kabaddi</h3>
+            <button class="join-session-button" onclick="joinSession('Kabaddi')">Join Session</button>
+        </div>
+
+        <div class="sport-card">
+            <h3 class="sport-name">Cricket</h3>
+            <button class="join-session-button" onclick="joinSession('Cricket')">Join Session</button>
+        </div>
+
+        <div class="sport-card">
+            <h3 class="sport-name">Volleyball</h3>
+            <button class="join-session-button" onclick="joinSession('Volleyball')">Join Session</button>
+        </div>
+
+        <div class="sport-card">
+            <h3 class="sport-name">Football</h3>
+            <button class="join-session-button" onclick="joinSession('Volleyball')">Join Session</button>
+        </div>
+
+        <div class="sport-card">
+            <h3 class="sport-name">Badmintonball</h3>
+            <button class="join-session-button" onclick="joinSession('Volleyball')">Join Session</button>
+        </div>
+
+        <!-- Add more sports cards as needed -->
+
+    </div>
+    <div class="footer">
+        @Designed by Oliva Penumatsa
+    </div>
+
+    <script>
+        function joinSession(sportName) {
+            // Redirect to the player-join-session.html page with the specified sportName
+            window.location.href = `player-join-session.html?sport=${sportName}`;
+        }
+    </script>
+</body>
+</html>

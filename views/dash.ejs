@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .options-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .options-container a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .options-container a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="options-container">
+        <a href="player-signup.ejs">Player Sign-Up</a>
+        <a href="player-signin.ejs">Player Sign-In</a>
+        <a href="admin-signin.ejs">Administrator Sign-In</a>
+    </div>
+</body>
+</html>
